@@ -79,7 +79,7 @@ In the above example, `1\2\17` are the universe numbers. They should match the u
 
 `pixel_in_string` is the pixel offset in the given string for which we should map the beginning of the LEDs colors of the universe.
 
-`num_of_pixels` is the number of pixels that is copied from the sACN packet for display. According to the sACN format this should be <= 170.
+`num_of_pixels` is the number of pixels that we want to copy from the sACN packet, for display, minus 1. For example, if we have 10 pixels `num_of_pixels` should be 9. According to the sACN format, it should be <= 170.
 
 `pixel_in_string + num_of_pixels` should be in the range of [0, pixels_per_string - 1], the script can't copy more pixels then there are in the string.
 
@@ -96,7 +96,7 @@ The show music is played by another Teensy board using the audio library and syn
 A Teensy library playing data frames from an SD card on LEDs.  
 Original version by Amir Blum can be found at https://github.com/blumamir/ll-teensy-player  
 Forked version for CaveOfWonders project can be found at https://github.com/bigoren/ll-teensy-player  
-The library was written and tested for teensy 3.5, with OctoWS2811 shield and the builtin SD card slot on the Teensy board.  
+The library was written and tested for teensy 3.5, with OctoWS2811 shield and the builtin SD card slot on the Teensy board.
 Note that the library depends on the Teensy SdFat library versions 1.x.x.
 
 ## Installation
